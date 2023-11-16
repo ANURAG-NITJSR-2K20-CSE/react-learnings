@@ -68,12 +68,15 @@ import styles from "./items.module.css"
 //   };
 
 // event bhi add kar sakte hai
-const Item = ({fooditem, handleBuyButton}) => {
-  
+const Item = ({fooditem}) => {
+  const handleBuyButtonClicked = (event) => {
+    console.log(event);
+    console.log(`${fooditem} being bought`);
+  }
     return (
       <li key={fooditem} className={`${styles["kg-items"]} list-group-item`}>
         <span className={styles["kg-span"]}>{fooditem}</span>
-        <button type="button" className={` ${styles.kgButton} btn btn-primary`} onClick={handleBuyButtonClicked}>buy</button>
+        <button type="button" className={` ${styles.kgButton} btn btn-primary`} onClick={(event)=>handleBuyButtonClicked(event)}>buy</button>
       </li>
       
     );

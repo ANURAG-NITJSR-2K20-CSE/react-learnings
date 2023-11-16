@@ -9,22 +9,22 @@ import FoodInput from "./components/FoodInput";
 function App() {
   // let foodItems = [];
   let foodItems = ["dal", "paneer", "pualo", "soyabean"];
-  
-  
+  // props ko bhejna hai
+  let texttoshow = "the user entered the food";
+
   const handleOnChange = (event) => {
     console.log(event.target.value);
-    textToShow = event.target.value; 
+    texttoshow = event.target.value;
   }
-  // props ko bhejna hai
   return (
     <>
     {/* child props kthrough koi bhi component ko js me bhej sakte hai */}
     {/* 1 container banao aur reuse karo a generic banalo */}
     <Container>
-      <div><h1 className="food-heading">healthy food</h1>
-      </div>
+      <div><h1 className="food-heading">healthy food</h1></div>
       {<ErrorMessage items={foodItems} />}
       <FoodInput handleOnChange={handleOnChange}/>
+      <p>{texttoshow}</p>
       <FoodItems items={foodItems} />
     </Container>
     

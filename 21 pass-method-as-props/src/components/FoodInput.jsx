@@ -24,7 +24,9 @@ import styles from "./FoodInput.module.css";
 let FoodInput = ({handleOnChange}) => {
     
     // 1st way
-    
+    // const handleOnChange = (event) => {
+    //     console.log(event.target.value);
+    // }
   return (
     <>
       <input
